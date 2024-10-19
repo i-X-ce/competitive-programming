@@ -9,7 +9,6 @@ struct Data
 {
   int index;
   int sum;
-  set<int> st;
 };
 
 
@@ -21,20 +20,18 @@ int main() {
     as.at(a).push_back(b);
   }
   int ans = n+1;
-  queue<Data> q; bool first = true; set<int> st;
-  q.push({0, 0, st});
+  queue<Data> q; bool first = true;
+  q.push({0, 0});
   while(!q.empty()){
     for (int i=0;i<q.size();i++){
       Data d = q.front();
       q.pop();
-      if (d.index == 0 && !first){
+      if (d.index == 0 && !first || d.sum >= ans){
         ans = min(ans, d.sum);
         continue;
       }
       for (int j=0;j<as.at(d.index).size();j++){
-        if (d.st.count(as.at(d.index).at(j))) continue;
-        set<int> temp = d.st; temp.insert(as.at(d.index).at(j));
-        q.push({as.at(d.index).at(j), d.sum+1, temp});
+        q.push({as.at(d.index).at(j), d.sum+1});
       }
       first = false;
     }
