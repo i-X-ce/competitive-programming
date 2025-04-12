@@ -1,5 +1,5 @@
 /*
-g++ XXX.cpp
+g++ temp.cpp
 ./a.out
 */
 #include <bits/stdc++.h>
