@@ -4,6 +4,7 @@ g++ temp.cpp
 */
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 void Yes() {
   cout << "Yes" << endl;
