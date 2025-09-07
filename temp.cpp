@@ -1,9 +1,11 @@
 /*
-g++ temp.cpp
+g++ temp.cpp -I ./ac-library 
 ./a.out
 */
 #include <bits/stdc++.h>
+#include <atcoder/all>
 using namespace std;
+using namespace atcoder;
 using ll = long long;
 
 int main() {
